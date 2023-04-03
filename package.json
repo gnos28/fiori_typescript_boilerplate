@@ -4,9 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel": "npm babel src --out-dir webapp --source-maps true --extensions \".ts,.js\" --copy-files --watch",
+    "serve": "npm ui5 serve -o index.html",
+    "build": "npm ui5 build self-contained --clean-dest --all",
+    "servebuild": "npm ui5 serve -o index.html --config ui5-dist.yaml"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/openui5": "^1.104.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "babel-preset-transform-ui5": "^7.1.1",
+    "eslint": "^8.37.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.0.3",
+    "ui5-middleware-livereload": "^0.8.2"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-livereload"
+    ]
+  }
 }
